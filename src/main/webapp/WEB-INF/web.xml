@@ -29,4 +29,14 @@
     <servlet-name>ConsultaContacto</servlet-name>
     <url-pattern>/ConsultaContacto</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Logear</display-name>
+    <servlet-name>Logear</servlet-name>
+    <servlet-class>Control.Logear</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logear</servlet-name>
+    <url-pattern>/Logear</url-pattern>
+  </servlet-mapping>
 </web-app>
