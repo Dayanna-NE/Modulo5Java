@@ -19,4 +19,14 @@
     <servlet-name>Servlet</servlet-name>
     <url-pattern>/Servlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ConsultaContacto</display-name>
+    <servlet-name>ConsultaContacto</servlet-name>
+    <servlet-class>Control.ConsultaContacto</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConsultaContacto</servlet-name>
+    <url-pattern>/ConsultaContacto</url-pattern>
+  </servlet-mapping>
 </web-app>
