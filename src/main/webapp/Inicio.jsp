@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<header>
-			<ul class="nav justify-content-center">
+			<ul class="nav nav-tabs nav-justified">
   				<li class="nav-item">
     				<a class="nav-link active" aria-current="page" href="Inicio.jsp">Inicio</a>
   				</li>
@@ -17,24 +17,16 @@
 			    	<a class="nav-link" href="Contacto.jsp">Contacto</a>
 			  	</li>
 			  	<li class="nav-item">
-			    	<a class="nav-link" href="Login.jsp">Login</a>
+			    	<a class="nav-link disabled" href="CrearCapacitacion.jsp">Crear Capacitación</a>
 			  	</li>
 			  	<li class="nav-item">
-			    	<a class="nav-link disabled">Disabled</a>
+			    	<a class="nav-link disabled" href="ListarCapacitacion.jsp">Listar Capacitaciones</a>
+			  	</li>
+			  	<li class="nav-item">
+			    	<a class="nav-link" href="Login.jsp">Login</a>
 			  	</li>
 			</ul>
   		</header>
-  		<nav>
-    			<ul>
-     				<li><a href="Inicio.jsp">Inicio</a></li>
-     				<li><a href="Contacto.jsp">Contacto</a></li>
-     				<li><a href="./capacitacion/crearCapacitacion.jsp">Crear Capacitación</a></li>
-     				<li><a href="./capacitacion/listarCapacitacion.jsp">Listar Capacitaciones</a></li>
-     				<li><a href="formulario.jsp">Formulario</a></li>
-     				<li><a href= "Login.jsp">Iniciar Sesión</a>
-    			</ul>
-   			</nav>
-  		
   		<footer>
   		<h5>by LosSinCodigo</h5>
   		</footer>
