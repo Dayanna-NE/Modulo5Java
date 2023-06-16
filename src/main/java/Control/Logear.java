@@ -10,6 +10,8 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+
+@WebServlet("/Login")
 /**
  * Servlet implementation class Logear
  */
@@ -30,14 +32,6 @@ public class Logear extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -47,12 +41,21 @@ public class Logear extends HttpServlet {
 		
 		if (!USUARIO.contentEquals(usuarioIngresado) || !CONTRASENA.contentEquals(contrasenaIngresada)) {
 			out.println("<script type=\"text/javascript\">");
-			out.println("alert('Usuario o Contraseña incorrecto';");
-			out.println("location='index.jsp'");
+			out.println("alert('Usuario o Contraseña incorrecto');");
+			out.println("location='Login.jsp'");
 			out.println("</script>");
+			
+			//response.sendRedirect("Login.jsp");
 			
 		} else {
 			HttpSession sesion = request.getSession(true); //si llegamos a la validacion, va a tener una sesión iniciada
+			// Asigna información a la sesión
+			sesion.setAttribute("usuario", usuarioIngresado);
+			sesion.setAttribute("contrasena", contrasenaIngresada);
+			out.println("<script type=\"text/javascript\">");
+			out.println("alert('Usuario correcto';)");
+			out.println("location='Inicio.jsp'");
+			out.println("</script>");
 		}
 	}
 
