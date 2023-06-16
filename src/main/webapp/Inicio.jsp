@@ -11,7 +11,7 @@
    			<nav>
     			<ul>
      				<li><a href="Inicio.jsp">Inicio</a></li>
-     				<li><a href="contactojsp.jsp">Contacto</a></li>
+     				<li><a href="Contacto.jsp">Contacto</a></li>
      				<li><a href="./capacitacion/crearCapacitacion.jsp">Crear Capacitación</a></li>
      				<li><a href="./capacitacion/listarCapacitacion.jsp">Listar Capacitación</a></li>
      				<li><a href="formulario.jsp">Formulario</a></li>

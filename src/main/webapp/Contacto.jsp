@@ -14,7 +14,7 @@
 	        <input type="text" id="nombre" name="nombre" placeholder="Ej: Pedro Sánchez" required><br>
 	        
 	        <label for="email">Email:</label><br>
-	        <input type="text" id="email" name="email" placeholder="Ejemplo@correo.com" required><br>
+	        <input type="email" id="email" name="email" placeholder="Ejemplo@correo.com" required><br>
 	        
 	        <label for="mensaje">Mensaje:</label><br>
 	        <textarea id="mensaje" name="mensaje" placeholder="Escriba aquí su consulta" required></textarea><br><br>
