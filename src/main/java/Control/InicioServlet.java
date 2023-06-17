@@ -6,49 +6,35 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
+@WebServlet("/Inicio")
 /**
- * Servlet implementation class ConsultaContacto
+ * Servlet implementation class InicioServlet
  */
-public class ConsultaContacto extends HttpServlet {
+public class InicioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ConsultaContacto() {
+    public InicioServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
-    
-    /**
+
+	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getServletContext().getRequestDispatcher("/contacto.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/inicio.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		final String NAME = request.getParameter("nombre");
-        final String EMAIL = request.getParameter("email");
-        final String MESSAGE = request.getParameter("mensaje");
-        
-        PrintWriter out = response.getWriter();
-        
-        // Enviar a base de datos o a un correo electronico
-        
-        out.println("<script type=\"text/javascript\">");
-		out.println("alert('Gracias por contactarnos');");
-		out.println("location='Inicio.jsp'"); 
-		out.println("</script>");
-        
-
-        // Redirige a página de confirmación
-        //response.sendRedirect("Contacto.jsp");
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

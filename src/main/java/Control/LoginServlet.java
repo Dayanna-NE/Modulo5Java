@@ -10,12 +10,10 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
-@WebServlet("/Login")
 /**
- * Servlet implementation class Logear
+ * Servlet implementation class LoginServlet
  */
-public class Logear extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       
 	// variables a utilizar
@@ -26,11 +24,18 @@ public class Logear extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Logear() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+    /**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+	}
+    
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -41,19 +46,19 @@ public class Logear extends HttpServlet {
 		
 		if (!USUARIO.contentEquals(usuarioIngresado) || !CONTRASENA.contentEquals(contrasenaIngresada)) {
 			out.println("<script type=\"text/javascript\">");
-			out.println("alert('Usuario o Contraseña incorrecto');");
+			out.println("alert('Usuario o Contrasena incorrecto');");
 			out.println("location='Login.jsp'");
 			out.println("</script>");
 			
 			//response.sendRedirect("Login.jsp");
 			
 		} else {
-			HttpSession sesion = request.getSession(true); //si llegamos a la validacion, va a tener una sesión iniciada
+			HttpSession sesion = request.getSession(); //si llegamos a la validacion, va a tener una sesión iniciada
 			// Asigna información a la sesión
 			sesion.setAttribute("usuario", usuarioIngresado);
 			sesion.setAttribute("contrasena", contrasenaIngresada);
 			out.println("<script type=\"text/javascript\">");
-			out.println("alert('Usuario correcto';)");
+			out.println("alert('Usuario correcto');");
 			out.println("location='Inicio.jsp'");
 			out.println("</script>");
 		}
