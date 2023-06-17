@@ -28,6 +28,9 @@
 				    	<a class="nav-link disabled" href="ListarCapacitacion.jsp">Listar Capacitaciones</a>
 				  	</li>
 				  	<li class="nav-item">
+				    	<a class="nav-link" href="UsuarioServlet">Listado de Usuarios</a>
+				  	</li>
+				  	<li class="nav-item">
 				    	<a class="nav-link" href="Login">Login</a>
 				  	</li>
                 </ul>
