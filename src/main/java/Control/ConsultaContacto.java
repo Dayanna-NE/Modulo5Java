@@ -43,7 +43,7 @@ public class ConsultaContacto extends HttpServlet {
         
         out.println("<script type=\"text/javascript\">");
 		out.println("alert('Gracias por contactarnos');");
-		out.println("location='Inicio.jsp'"); 
+		out.println("location='Inicio'"); 
 		out.println("</script>");
         
 

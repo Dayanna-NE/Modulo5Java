@@ -39,7 +39,7 @@
             <div class="card-body">
                 
                 <h2>Iniciar Sesión</h2>
-                <form action="Logear" method="post">
+                <form action="Login" method="post">
 					<label for="usuario">Usuario</label>
 					<input type="text" name="usuario" placeholder="Ingrese RUT de Usuario" required>
 					<label for="contrasena">Contraseña</label>

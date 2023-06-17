@@ -39,7 +39,7 @@
             <div class="card-body">
                 
                 <h2>Formulario de Contacto</h2>
-	    		<form action="ConsultaContacto" method="post">
+	    		<form action="Contacto" method="post">
 			        <label for="nombre">Nombre:</label><br>
 			        <input type="text" id="nombre" name="nombre" placeholder="Ej: Pedro Sánchez" required><br>
 			        

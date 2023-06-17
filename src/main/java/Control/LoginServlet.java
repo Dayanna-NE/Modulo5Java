@@ -33,6 +33,7 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
 	}
     
@@ -47,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 		if (!USUARIO.contentEquals(usuarioIngresado) || !CONTRASENA.contentEquals(contrasenaIngresada)) {
 			out.println("<script type=\"text/javascript\">");
 			out.println("alert('Usuario o Contrasena incorrecto');");
-			out.println("location='Login.jsp'");
+			out.println("location='Login'");
 			out.println("</script>");
 			
 			//response.sendRedirect("Login.jsp");
@@ -59,7 +60,7 @@ public class LoginServlet extends HttpServlet {
 			sesion.setAttribute("contrasena", contrasenaIngresada);
 			out.println("<script type=\"text/javascript\">");
 			out.println("alert('Usuario correcto');");
-			out.println("location='Inicio.jsp'");
+			out.println("location='Inicio'");
 			out.println("</script>");
 		}
 	}
