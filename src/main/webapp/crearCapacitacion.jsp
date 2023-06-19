@@ -18,7 +18,7 @@
             <div class="card-body">
             <h2>Crear Capacitacion</h2>
             <section class=formu>
-	  <form action="procesarCrearCapacitacion" method="post">
+	  <form action="procesoListarCapacitacion" method="post">
         <label for="idCapacitacion" class="form-control">ID Capacitacion </label>
         <input type="number" name="idCapacitacion" placeholder="Ingrese el id" required class="form-control">
         <label for="rutEmpresa" class="form-control">RUT Empresa</label>

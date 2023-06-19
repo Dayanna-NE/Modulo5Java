@@ -15,7 +15,7 @@ import Control.Usuario;
  */
 public class UsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private ArrayList<Usuario> users = new ArrayList<Usuario>();   
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,12 +33,9 @@ public class UsuarioServlet extends HttpServlet {
 		
 		if (clickedLink.equals("ListarUsuarios")) {
 			//Cuando es presionado Listar Usuarios
-			ArrayList<Usuario> users = new ArrayList<Usuario>();
+			
 			//Instancia algunos usuarios para probar
-			users.add(new Usuario("Jose", "Marin", "Cabrera", "12/04/1987", "19364756-3"));
-			users.add(new Usuario("Juan", "Gomez", "Becerra", "21/05/1995", "17593546-2"));
-			users.add(new Usuario("Felipe", "Abarca", "Marin", "16/09/1998", "19222333-6"));
-			users.add(new Usuario("Fabian", "Pereira", "Rodriguez", "30/04/1999", "17444654-9"));
+			
 			
 			request.setAttribute("users", users);
 			// redirije a página con lista de usuarios
@@ -61,14 +58,60 @@ public class UsuarioServlet extends HttpServlet {
 		final String LASTNAME2 = request.getParameter("apellido-materno");
 		final String BIRTHDATE = request.getParameter("fecha-nacimiento");
 		final String RUN = request.getParameter("run");
-		
+		Usuario usu = new Usuario(NAME,LASTNAME1,LASTNAME2,BIRTHDATE,RUN);
+		users.add(usu);
         // Enviar a base de datos o a un correo electronico
 		
 		PrintWriter out = response.getWriter();
         out.println("<script type=\"text/javascript\">");
 		out.println("alert('Usuario Creado');");
-		out.println("location='Inicio'"); 
 		out.println("</script>");
+		//Instanciando una variable de tipo PrintWriter
+		
+		//selecciona el tipo de texto
+		response.setContentType("text/html");
+		//Instanciar el out
+		out = response.getWriter();
+		//hacemos la estructura del html
+		out.println("<!DOCTYPE html>");
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<title>Listar Usuario</title>");
+		
+		out.println("</head>");
+		out.println("<body>");
+		out.println("<h1>Usuario</h1>");
+		out.println("<section class='form'>");
+		out.println("<table>");
+		out.println("<tr>");
+		out.println("<th> Tipo de Dato </th>");
+		out.println("<th> Descripcion </th>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<td>  Nombre Usuario: </td>");
+		out.println("<td>"+ usu.getNombre() +"</td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<td> Apellido Paterno </td>");
+		out.println("<td>"+usu.getApellidoPaterno()+"</td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<td> Apellido Materno </td>");
+		out.println("<td>"+usu.getApellidoMaterno()+"</td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<td> Fecha de nacimiento </td>");
+		out.println("<td>"+usu.getFechaNacimiento()+"</td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<td> RUN </td>");
+		out.println("<td>"+usu.getRun()+"</td>");
+		out.println("</tr>");
+		out.println("</table>");
+		out.println("</section>");
+		out.println("</body>");
+		out.println("</html>");
+		out.println("<a href='crearUsuario.jsp'>Regresar</a>");
 	}
 
 }
