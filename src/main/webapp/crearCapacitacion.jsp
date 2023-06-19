@@ -37,7 +37,7 @@
         <input type="time"name="horaCapacitacion" required class="form-control">
         <label for="lugarCapacitacion" class="form-control">Lugar: </label>
         <input type="text" name="lugarCapacitacion" placeholder="Direccion 123" required class="form-control">
-        <label for="number" name="duracionCapacitacion" class="form-control">Hora </label>
+        <label for="number" name="duracionCapacitacion" class="form-control">Duración </label>
         <input type="text" name="duracionCapacitacion" placeholder="1"  required class="form-control"> 
         <label for="cantidadAsistentes" class="form-control">Asistentes: </label>
         <input type="text"name="cantidadAsistentes" placeholder="1" required class="form-control">

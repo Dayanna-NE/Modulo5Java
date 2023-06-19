@@ -71,7 +71,6 @@ public class UsuarioServlet extends HttpServlet {
 		//selecciona el tipo de texto
 		response.setContentType("text/html");
 		//Instanciar el out
-		out = response.getWriter();
 		//hacemos la estructura del html
 		out.println("<!DOCTYPE html>");
 		out.println("<html>");
@@ -112,6 +111,7 @@ public class UsuarioServlet extends HttpServlet {
 		out.println("</body>");
 		out.println("</html>");
 		out.println("<a href='crearUsuario.jsp'>Regresar</a>");
+		out.close();
 	}
 
 }

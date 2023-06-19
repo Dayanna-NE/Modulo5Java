@@ -97,6 +97,7 @@ public class procesoCrearCapacitacion extends HttpServlet {
 				out.println("</body>");
 				out.println("</html>");
 				out.println("<a href='crearCapacitacion.jsp'>Regresar</a>");
+				out.close();
 	}
 
 }

@@ -20,7 +20,7 @@
                 <h5 class="card-title">Empresa de Asesoría en Prevención del Riesgo</h5>
                 <img src="https://www.cac-asprocon.as/resources/servicios/asesoria-prl.jpg" class="img-fluid" alt="...">
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="login.jsp" class="btn btn-primary">Iniciar Sesión</a>
+                <a href="Login" class="btn btn-primary">Iniciar Sesión</a>
             </div>
             
             <%@ include file='recursos/footer.jsp' %>

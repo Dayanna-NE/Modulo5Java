@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -17,7 +19,11 @@ import entity.Capacitacion;
 
 public class procesoListarCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private ArrayList<Capacitacion> cap = new ArrayList<Capacitacion>();   
+    private ArrayList<Capacitacion> cap = new ArrayList<Capacitacion>();
+    
+    private PrintWriter out;
+    private HttpSession sesion;
+    
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -32,22 +38,35 @@ public class procesoListarCapacitacion extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// GET sirve para invocar JSP con lista de usuarios o formulario para crear usuarios
-				String clickedLink = request.getParameter("link");
 				
-				if (clickedLink.equals("listarCapacitacion")) {
-					//Cuando es presionado Listar Usuarios
-					
-					//Instancia algunos usuarios para probar
-					
-					
-					request.setAttribute("capHtml", cap);
-					// redirije a página con lista de usuarios
-					getServletContext().getRequestDispatcher("/listarCapacitacion.jsp").forward(request, response);
-				
-				} else {
-					// Cuando es presionado Crear Usuario
-					getServletContext().getRequestDispatcher("/crearCapacitacion.jsp").forward(request, response);
-				}
+		String clickedLink = request.getParameter("link");
+		//Comprueba inicio de sesion previo
+		sesion = request.getSession(false);
+		if (sesion.getAttribute("usuario") == null) {
+			//Comprueba inicio de sesion previo
+			sesion = request.getSession(false);
+			//En caso que no haya iniciado sesion, muestra alerta y redirije a login
+			out = response.getWriter();
+			out.println("<script type=\"text/javascript\">");
+			out.println("alert('Debes iniciar sesion primero');");
+			out.println("location='Login'"); 
+			out.println("</script>");
+			out.close();
+			
+		} else {
+			
+			if (clickedLink.equals("listarCapacitacion")) {
+				//Cuando es presionado Listar Capacitacion
+				request.setAttribute("capHtml", cap);
+				// redirije a página con lista de usuarios
+				getServletContext().getRequestDispatcher("/listarCapacitacion.jsp").forward(request, response);
+
+			} else {
+				// Cuando es presionado Crear Usuario
+				getServletContext().getRequestDispatcher("/crearCapacitacion.jsp").forward(request, response);
+			}
+		}
+
 	}
 
 	/**
@@ -65,7 +84,6 @@ public class procesoListarCapacitacion extends HttpServlet {
 		cap.setCantidadDeAsistentes(Integer.parseInt((request.getParameter("cantidadAsistentes"))));
 		this.cap.add(cap);
 		//Instanciando una variable de tipo PrintWriter
-				PrintWriter out;
 				//selecciona el tipo de texto
 				response.setContentType("text/html");
 				//Instanciar el out
@@ -115,6 +133,7 @@ public class procesoListarCapacitacion extends HttpServlet {
 				out.println("</body>");
 				out.println("</html>");
 				out.println("<a href='crearCapacitacion.jsp'>Regresar</a>");
+				out.close();
 	}
 
 }

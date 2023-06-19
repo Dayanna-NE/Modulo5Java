@@ -13,15 +13,13 @@
         <a class="nav-link <%= request.getRequestURI().endsWith("crearCapacitacion.jsp") ? "active" : "" %> " href="procesoListarCapacitacion?link=crearCapacitacion">Crear Capacitación</a>
     </li>
     <li class="nav-item">
-
-        <a class="nav-link <%= request.getRequestURI().endsWith("listaCapacitacion.jsp") ? "active" : "" %> " href="procesoListarCapacitacion?link=listarCapacitacion">Lista Capacitaciones</a>
-
-    </li>
-    <li class="nav-item">
-        <a class="nav-link <%= request.getRequestURI().endsWith("listaUsuarios.jsp") ? "active" : "" %>" href="UsuarioServlet?link=ListarUsuarios">Listado de Usuarios</a>
+        <a class="nav-link <%= request.getRequestURI().endsWith("listarCapacitacion.jsp") ? "active" : "" %> " href="procesoListarCapacitacion?link=listarCapacitacion">Lista Capacitaciones</a>
     </li>
     <li class="nav-item">
         <a class="nav-link <%= request.getRequestURI().endsWith("crearUsuario.jsp") ? "active" : "" %>" href="UsuarioServlet?link=CrearUsuario">Crear Usuario</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link <%= request.getRequestURI().endsWith("listaUsuarios.jsp") ? "active" : "" %>" href="UsuarioServlet?link=ListarUsuarios">Lista Usuarios</a>
     </li>
     <li class="nav-item">
         <a class="nav-link <%= request.getRequestURI().endsWith("login.jsp") ? "active" : "" %>" href="Login">Login</a>
