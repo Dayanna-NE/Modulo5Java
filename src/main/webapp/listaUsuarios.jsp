@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@page import="java.util.ArrayList"%>  
-<%@ page import="Control.Usuario" %>
+<%@ page import="entity.Usuario" %>
 
 <!DOCTYPE html>
 <html>

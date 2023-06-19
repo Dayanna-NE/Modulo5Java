@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import Control.Usuario;
+import entity.Usuario;
 
 /**
  * Servlet implementation class UsuarioServlet
