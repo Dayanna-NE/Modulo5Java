@@ -13,7 +13,9 @@
         <a class="nav-link <%= request.getRequestURI().endsWith("crearCapacitacion.jsp") ? "active" : "" %> " href="procesoListarCapacitacion?link=crearCapacitacion">Crear Capacitación</a>
     </li>
     <li class="nav-item">
+
         <a class="nav-link <%= request.getRequestURI().endsWith("listaCapacitacion.jsp") ? "active" : "" %> " href="procesoListarCapacitacion?link=listarCapacitacion">Lista Capacitaciones</a>
+
     </li>
     <li class="nav-item">
         <a class="nav-link <%= request.getRequestURI().endsWith("listaUsuarios.jsp") ? "active" : "" %>" href="UsuarioServlet?link=ListarUsuarios">Listado de Usuarios</a>
