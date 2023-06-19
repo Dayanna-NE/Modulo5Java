@@ -10,10 +10,10 @@
         <a class="nav-link <%= request.getRequestURI().endsWith("contacto.jsp") ? "active" : "" %>" href="Contacto">Contacto</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link <%= request.getRequestURI().endsWith("crearCapacitacion.jsp") ? "active" : "" %> disabled" href="CrearCapacitacion.jsp">Crear Capacitación</a>
+        <a class="nav-link <%= request.getRequestURI().endsWith("crearCapacitacion.jsp") ? "active" : "" %> " href="crearCapacitacion.jsp">Crear Capacitación</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link <%= request.getRequestURI().endsWith("listaCapacitacion.jsp") ? "active" : "" %> disabled" href="ListaCapacitacion.jsp">Lista Capacitaciones</a>
+        <a class="nav-link <%= request.getRequestURI().endsWith("listaCapacitacion.jsp") ? "active" : "" %> " href="listarCapacitacion">Lista Capacitaciones</a>
     </li>
     <li class="nav-item">
         <a class="nav-link <%= request.getRequestURI().endsWith("listaUsuarios.jsp") ? "active" : "" %>" href="UsuarioServlet?link=ListarUsuarios">Listado de Usuarios</a>

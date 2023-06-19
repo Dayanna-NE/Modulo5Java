@@ -59,4 +59,24 @@
     <servlet-name>UsuarioServlet</servlet-name>
     <url-pattern>/UsuarioServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>procesoListarCapacitacion</display-name>
+    <servlet-name>procesoListarCapacitacion</servlet-name>
+    <servlet-class>Control.procesoListarCapacitacion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>procesoListarCapacitacion</servlet-name>
+    <url-pattern>/procesoListarCapacitacion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>procesoCrearCapacitacion</display-name>
+    <servlet-name>procesoCrearCapacitacion</servlet-name>
+    <servlet-class>Control.procesoCrearCapacitacion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>procesoCrearCapacitacion</servlet-name>
+    <url-pattern>/procesoCrearCapacitacion</url-pattern>
+  </servlet-mapping>
 </web-app>
